@@ -8,7 +8,7 @@ import (
 )
 
 func main() {
-  r := mux.newRouter()
+  r := mux.NewRouter()
     port := getPort()
 
     r.HandleFunc("/", indexHandler).Methods("GET")
