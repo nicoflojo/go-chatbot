@@ -20,4 +20,16 @@ func main() {
       }
 }
 
+func indexHandler(w http.ResponseWriter, r *http.Request) {
+  fmt.Fprint(w, "Got my server up and running.")
+}
 
+// gets port for cloud deployment
+func getPort() string {
+  port := os.Getenv("PORT")
+  if port == "" {
+    port = ":4000"
+    fmt.Printf("Port not defined, using Port %s running   port\n", port)
+  }
+ return port
+}
